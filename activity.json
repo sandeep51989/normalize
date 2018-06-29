@@ -1,0 +1,22 @@
+{
+  "name": "Normalizer",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "activity description",
+  "author": "Sri Sandeep Velichety <srisandeep.velichety@nov.com>",
+  "title": "Senml Normalizer",
+  "description": "MaxEdge Senl Message Normalizer",
+  "inputs":[
+    {
+      "name": "data",
+      "type": "object"
+    }
+  ],
+  "output": [
+    {
+      "name": "output",
+      "type": "any"
+    }
+  ]
+}
+
