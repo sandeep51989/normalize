@@ -2,6 +2,7 @@
   "name": "Normalizer",
   "version": "0.0.1",
   "type": "flogo:activity",
+  "ref": "github.com/sandeep51989/normalize",
   "description": "activity description",
   "author": "Sri Sandeep Velichety <srisandeep.velichety@nov.com>",
   "title": "Senml Normalizer",
