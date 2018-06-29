@@ -1,6 +1,9 @@
 package normalize
 
 import (
+	"encoding/json"
+	"fmt"
+
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
@@ -47,15 +50,24 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	//var entry Message
-	raw := context.GetInput("data").(Message)
+	raw := context.GetInput("data").(string)
+	fmt.Println("raw")
+	byteVal := []byte(raw)
+
+	var rawMessage Message
+
+	err = json.Unmarshal(byteVal, &rawMessage)
+	if err != nil {
+		logger.Error(err)
+	}
 	//Buffer := context.GetInput("buffer").(int)
 	//var queue = make(chan Message, Buffer)
 	var data []OutRecord
-	for _, items := range raw.Entries {
+	for _, items := range rawMessage.Entries {
 		data = append(data, OutRecord{
 			Name:     items.Name,
 			Value:    items.Value,
-			BaseTime: raw.BaseTime})
+			BaseTime: rawMessage.BaseTime})
 
 	}
 	context.SetOutput("result", data)
