@@ -1,5 +1,5 @@
 {
-  "name": "Normalizer",
+  "name": "normalize",
   "version": "0.0.1",
   "type": "flogo:activity",
   "ref": "github.com/sandeep51989/normalize",

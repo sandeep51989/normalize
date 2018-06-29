@@ -1,4 +1,4 @@
-package Normalizer
+package normalize
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
